@@ -1,0 +1,412 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AE68A1401A79AD4A0092D873 /* Ra.h in Headers */ = {isa = PBXBuildFile; fileRef = AE68A13F1A79AD4A0092D873 /* Ra.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AE68A1461A79AD4A0092D873 /* Ra.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE68A13A1A79AD4A0092D873 /* Ra.framework */; };
+		AE68A14D1A79AD4A0092D873 /* RaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE68A14C1A79AD4A0092D873 /* RaTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AE68A1471A79AD4A0092D873 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE68A1311A79AD4A0092D873 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AE68A1391A79AD4A0092D873;
+			remoteInfo = Ra;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		AE68A13A1A79AD4A0092D873 /* Ra.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Ra.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE68A13E1A79AD4A0092D873 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AE68A13F1A79AD4A0092D873 /* Ra.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Ra.h; sourceTree = "<group>"; };
+		AE68A1451A79AD4A0092D873 /* RaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE68A14B1A79AD4A0092D873 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AE68A14C1A79AD4A0092D873 /* RaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AE68A1361A79AD4A0092D873 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AE68A1421A79AD4A0092D873 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE68A1461A79AD4A0092D873 /* Ra.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AE68A1301A79AD4A0092D873 = {
+			isa = PBXGroup;
+			children = (
+				AE68A13C1A79AD4A0092D873 /* Ra */,
+				AE68A1491A79AD4A0092D873 /* RaTests */,
+				AE68A13B1A79AD4A0092D873 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AE68A13B1A79AD4A0092D873 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AE68A13A1A79AD4A0092D873 /* Ra.framework */,
+				AE68A1451A79AD4A0092D873 /* RaTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AE68A13C1A79AD4A0092D873 /* Ra */ = {
+			isa = PBXGroup;
+			children = (
+				AE68A13F1A79AD4A0092D873 /* Ra.h */,
+				AE68A13D1A79AD4A0092D873 /* Supporting Files */,
+			);
+			path = Ra;
+			sourceTree = "<group>";
+		};
+		AE68A13D1A79AD4A0092D873 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AE68A13E1A79AD4A0092D873 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AE68A1491A79AD4A0092D873 /* RaTests */ = {
+			isa = PBXGroup;
+			children = (
+				AE68A14C1A79AD4A0092D873 /* RaTests.swift */,
+				AE68A14A1A79AD4A0092D873 /* Supporting Files */,
+			);
+			path = RaTests;
+			sourceTree = "<group>";
+		};
+		AE68A14A1A79AD4A0092D873 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AE68A14B1A79AD4A0092D873 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		AE68A1371A79AD4A0092D873 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE68A1401A79AD4A0092D873 /* Ra.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		AE68A1391A79AD4A0092D873 /* Ra */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AE68A1501A79AD4A0092D873 /* Build configuration list for PBXNativeTarget "Ra" */;
+			buildPhases = (
+				AE68A1351A79AD4A0092D873 /* Sources */,
+				AE68A1361A79AD4A0092D873 /* Frameworks */,
+				AE68A1371A79AD4A0092D873 /* Headers */,
+				AE68A1381A79AD4A0092D873 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Ra;
+			productName = Ra;
+			productReference = AE68A13A1A79AD4A0092D873 /* Ra.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		AE68A1441A79AD4A0092D873 /* RaTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AE68A1531A79AD4A0092D873 /* Build configuration list for PBXNativeTarget "RaTests" */;
+			buildPhases = (
+				AE68A1411A79AD4A0092D873 /* Sources */,
+				AE68A1421A79AD4A0092D873 /* Frameworks */,
+				AE68A1431A79AD4A0092D873 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AE68A1481A79AD4A0092D873 /* PBXTargetDependency */,
+			);
+			name = RaTests;
+			productName = RaTests;
+			productReference = AE68A1451A79AD4A0092D873 /* RaTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AE68A1311A79AD4A0092D873 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0620;
+				ORGANIZATIONNAME = "Rachel Brindle";
+				TargetAttributes = {
+					AE68A1391A79AD4A0092D873 = {
+						CreatedOnToolsVersion = 6.2;
+					};
+					AE68A1441A79AD4A0092D873 = {
+						CreatedOnToolsVersion = 6.2;
+					};
+				};
+			};
+			buildConfigurationList = AE68A1341A79AD4A0092D873 /* Build configuration list for PBXProject "Ra" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = AE68A1301A79AD4A0092D873;
+			productRefGroup = AE68A13B1A79AD4A0092D873 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AE68A1391A79AD4A0092D873 /* Ra */,
+				AE68A1441A79AD4A0092D873 /* RaTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AE68A1381A79AD4A0092D873 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AE68A1431A79AD4A0092D873 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AE68A1351A79AD4A0092D873 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AE68A1411A79AD4A0092D873 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE68A14D1A79AD4A0092D873 /* RaTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AE68A1481A79AD4A0092D873 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AE68A1391A79AD4A0092D873 /* Ra */;
+			targetProxy = AE68A1471A79AD4A0092D873 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		AE68A14E1A79AD4A0092D873 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		AE68A14F1A79AD4A0092D873 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		AE68A1511A79AD4A0092D873 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = Ra/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		AE68A1521A79AD4A0092D873 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = Ra/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		AE68A1541A79AD4A0092D873 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = RaTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		AE68A1551A79AD4A0092D873 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = RaTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AE68A1341A79AD4A0092D873 /* Build configuration list for PBXProject "Ra" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AE68A14E1A79AD4A0092D873 /* Debug */,
+				AE68A14F1A79AD4A0092D873 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AE68A1501A79AD4A0092D873 /* Build configuration list for PBXNativeTarget "Ra" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AE68A1511A79AD4A0092D873 /* Debug */,
+				AE68A1521A79AD4A0092D873 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		AE68A1531A79AD4A0092D873 /* Build configuration list for PBXNativeTarget "RaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AE68A1541A79AD4A0092D873 /* Debug */,
+				AE68A1551A79AD4A0092D873 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AE68A1311A79AD4A0092D873 /* Project object */;
+}
