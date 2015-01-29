@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8955AAA51A79F72100D18868 /* Ra-iOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 8955AAA41A79F72100D18868 /* Ra-iOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8955AAAB1A79F72100D18868 /* Ra.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8955AAA01A79F72100D18868 /* Ra.framework */; };
+		8955AAC51A79F81900D18868 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE68A15E1A79ADEE0092D873 /* Nimble.framework */; };
+		8955AAC61A79F81900D18868 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE68A16F1A79ADF80092D873 /* Quick.framework */; };
+		8955AAC71A79F82000D18868 /* Injector.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE68A1841A79AE980092D873 /* Injector.swift */; };
+		8955AAC81A79F82400D18868 /* InjectorSpecs.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE68A1821A79AE380092D873 /* InjectorSpecs.swift */; };
 		AE68A1401A79AD4A0092D873 /* Ra.h in Headers */ = {isa = PBXBuildFile; fileRef = AE68A13F1A79AD4A0092D873 /* Ra.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AE68A1461A79AD4A0092D873 /* Ra.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE68A13A1A79AD4A0092D873 /* Ra.framework */; };
 		AE68A1801A79AE1A0092D873 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE68A1621A79ADEE0092D873 /* Nimble.framework */; };
@@ -16,6 +22,27 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		8955AAAC1A79F72100D18868 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE68A1311A79AD4A0092D873 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8955AA9F1A79F72100D18868;
+			remoteInfo = "Ra-iOS";
+		};
+		8955AAC11A79F80B00D18868 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE68A1651A79ADF80092D873 /* Quick.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 5A5D117B19473F2100F6D13D;
+			remoteInfo = "Quick-iOS";
+		};
+		8955AAC31A79F80B00D18868 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE68A1561A79ADEE0092D873 /* Nimble.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 1F1A74281940169200FFFC47;
+			remoteInfo = "Nimble-iOS";
+		};
 		AE68A1471A79AD4A0092D873 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = AE68A1311A79AD4A0092D873 /* Project object */;
@@ -110,6 +137,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8955AAA01A79F72100D18868 /* Ra.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Ra.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8955AAA31A79F72100D18868 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8955AAA41A79F72100D18868 /* Ra-iOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Ra-iOS.h"; sourceTree = "<group>"; };
+		8955AAAA1A79F72100D18868 /* Ra_iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Ra_iOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8955AAB01A79F72100D18868 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AE68A13A1A79AD4A0092D873 /* Ra.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Ra.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE68A13E1A79AD4A0092D873 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AE68A13F1A79AD4A0092D873 /* Ra.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Ra.h; sourceTree = "<group>"; };
@@ -122,6 +154,23 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		8955AA9C1A79F72100D18868 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8955AAA71A79F72100D18868 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8955AAC51A79F81900D18868 /* Nimble.framework in Frameworks */,
+				8955AAC61A79F81900D18868 /* Quick.framework in Frameworks */,
+				8955AAAB1A79F72100D18868 /* Ra.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AE68A1361A79AD4A0092D873 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -142,11 +191,46 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8955AAA11A79F72100D18868 /* Ra-iOS */ = {
+			isa = PBXGroup;
+			children = (
+				8955AAA41A79F72100D18868 /* Ra-iOS.h */,
+				8955AAA21A79F72100D18868 /* Supporting Files */,
+			);
+			path = "Ra-iOS";
+			sourceTree = "<group>";
+		};
+		8955AAA21A79F72100D18868 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8955AAA31A79F72100D18868 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8955AAAE1A79F72100D18868 /* Ra-iOSTests */ = {
+			isa = PBXGroup;
+			children = (
+				8955AAAF1A79F72100D18868 /* Supporting Files */,
+			);
+			path = "Ra-iOSTests";
+			sourceTree = "<group>";
+		};
+		8955AAAF1A79F72100D18868 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8955AAB01A79F72100D18868 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		AE68A1301A79AD4A0092D873 = {
 			isa = PBXGroup;
 			children = (
 				AE68A13C1A79AD4A0092D873 /* Ra */,
 				AE68A1491A79AD4A0092D873 /* RaTests */,
+				8955AAA11A79F72100D18868 /* Ra-iOS */,
+				8955AAAE1A79F72100D18868 /* Ra-iOSTests */,
 				AE68A13B1A79AD4A0092D873 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -156,6 +240,8 @@
 			children = (
 				AE68A13A1A79AD4A0092D873 /* Ra.framework */,
 				AE68A1451A79AD4A0092D873 /* RaTests.xctest */,
+				8955AAA01A79F72100D18868 /* Ra.framework */,
+				8955AAAA1A79F72100D18868 /* Ra_iOSTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -224,6 +310,14 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		8955AA9D1A79F72100D18868 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8955AAA51A79F72100D18868 /* Ra-iOS.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AE68A1371A79AD4A0092D873 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -235,6 +329,44 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		8955AA9F1A79F72100D18868 /* Ra-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8955AABF1A79F72100D18868 /* Build configuration list for PBXNativeTarget "Ra-iOS" */;
+			buildPhases = (
+				8955AA9B1A79F72100D18868 /* Sources */,
+				8955AA9C1A79F72100D18868 /* Frameworks */,
+				8955AA9D1A79F72100D18868 /* Headers */,
+				8955AA9E1A79F72100D18868 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Ra-iOS";
+			productName = "Ra-iOS";
+			productReference = 8955AAA01A79F72100D18868 /* Ra.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		8955AAA91A79F72100D18868 /* Ra-iOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8955AAC01A79F72100D18868 /* Build configuration list for PBXNativeTarget "Ra-iOSTests" */;
+			buildPhases = (
+				8955AAA61A79F72100D18868 /* Sources */,
+				8955AAA71A79F72100D18868 /* Frameworks */,
+				8955AAA81A79F72100D18868 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8955AAC21A79F80B00D18868 /* PBXTargetDependency */,
+				8955AAC41A79F80B00D18868 /* PBXTargetDependency */,
+				8955AAAD1A79F72100D18868 /* PBXTargetDependency */,
+			);
+			name = "Ra-iOSTests";
+			productName = "Ra-iOSTests";
+			productReference = 8955AAAA1A79F72100D18868 /* Ra_iOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		AE68A1391A79AD4A0092D873 /* Ra */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = AE68A1501A79AD4A0092D873 /* Build configuration list for PBXNativeTarget "Ra" */;
@@ -282,6 +414,12 @@
 				LastUpgradeCheck = 0620;
 				ORGANIZATIONNAME = "Rachel Brindle";
 				TargetAttributes = {
+					8955AA9F1A79F72100D18868 = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+					8955AAA91A79F72100D18868 = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
 					AE68A1391A79AD4A0092D873 = {
 						CreatedOnToolsVersion = 6.2;
 					};
@@ -314,6 +452,8 @@
 			targets = (
 				AE68A1391A79AD4A0092D873 /* Ra */,
 				AE68A1441A79AD4A0092D873 /* RaTests */,
+				8955AA9F1A79F72100D18868 /* Ra-iOS */,
+				8955AAA91A79F72100D18868 /* Ra-iOSTests */,
 			);
 		};
 /* End PBXProject section */
@@ -392,6 +532,20 @@
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
+		8955AA9E1A79F72100D18868 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8955AAA81A79F72100D18868 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AE68A1381A79AD4A0092D873 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -409,6 +563,22 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		8955AA9B1A79F72100D18868 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8955AAC71A79F82000D18868 /* Injector.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8955AAA61A79F72100D18868 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8955AAC81A79F82400D18868 /* InjectorSpecs.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AE68A1351A79AD4A0092D873 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -428,6 +598,21 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		8955AAAD1A79F72100D18868 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8955AA9F1A79F72100D18868 /* Ra-iOS */;
+			targetProxy = 8955AAAC1A79F72100D18868 /* PBXContainerItemProxy */;
+		};
+		8955AAC21A79F80B00D18868 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Quick-iOS";
+			targetProxy = 8955AAC11A79F80B00D18868 /* PBXContainerItemProxy */;
+		};
+		8955AAC41A79F80B00D18868 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Nimble-iOS";
+			targetProxy = 8955AAC31A79F80B00D18868 /* PBXContainerItemProxy */;
+		};
 		AE68A1481A79AD4A0092D873 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = AE68A1391A79AD4A0092D873 /* Ra */;
@@ -446,6 +631,86 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		8955AAB31A79F72100D18868 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Ra-iOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = Ra;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8955AAB41A79F72100D18868 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Ra-iOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = Ra;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8955AAB51A79F72100D18868 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Ra-iOSTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		8955AAB61A79F72100D18868 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Ra-iOSTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 		AE68A14E1A79AD4A0092D873 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -599,6 +864,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		8955AABF1A79F72100D18868 /* Build configuration list for PBXNativeTarget "Ra-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8955AAB31A79F72100D18868 /* Debug */,
+				8955AAB41A79F72100D18868 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8955AAC01A79F72100D18868 /* Build configuration list for PBXNativeTarget "Ra-iOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8955AAB51A79F72100D18868 /* Debug */,
+				8955AAB61A79F72100D18868 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		AE68A1341A79AD4A0092D873 /* Build configuration list for PBXProject "Ra" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -615,6 +898,7 @@
 				AE68A1521A79AD4A0092D873 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AE68A1531A79AD4A0092D873 /* Build configuration list for PBXNativeTarget "RaTests" */ = {
 			isa = XCConfigurationList;
@@ -623,6 +907,7 @@
 				AE68A1551A79AD4A0092D873 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

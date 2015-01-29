@@ -1,11 +1,3 @@
-//
-//  Ra.h
-//  Ra
-//
-//  Created by pivotal on 1/28/15.
-//  Copyright (c) 2015 Rachel Brindle. All rights reserved.
-//
-
 #import <Cocoa/Cocoa.h>
 
 //! Project version number for Ra.
