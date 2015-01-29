@@ -3,7 +3,7 @@ import Foundation
 public class Injector {
     public init() {}
 
-    public var creationMethods : [String: (Void) -> (NSObject)] = [:]
+    private var creationMethods : [String: (Void) -> (NSObject)] = [:]
 
     public func create(klass: AnyClass) -> NSObject {
         if let closure : (Void) -> (NSObject) = creationMethods[klass.description()] {
@@ -16,5 +16,24 @@ public class Injector {
 
     public func create(str: String) -> NSObject? {
         return creationMethods[str]?()
+    }
+    
+    // MARK: Adding creation methods
+    // TODO: rename "creation method" to something better.
+    
+    public func setCreationMethod(klass: AnyClass, creationMethod: (Void) -> (NSObject)) {
+        self.creationMethods[klass.description()] = creationMethod
+    }
+    
+    public func setCreationMethod(string: String, creationMethod: (Void) -> (NSObject)) {
+        self.creationMethods[string] = creationMethod
+    }
+    
+    public func removeCreationMethod(klass: AnyClass) {
+        self.creationMethods.removeValueForKey(klass.description())
+    }
+    
+    public func removeCreationMethod(string: String) {
+        self.creationMethods.removeValueForKey(string)
     }
 }
