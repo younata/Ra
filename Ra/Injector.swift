@@ -7,15 +7,25 @@ public class Injector {
 
     public func create(klass: AnyClass) -> NSObject {
         if let closure : (Void) -> (NSObject) = creationMethods[klass.description()] {
-            return closure()
+            let obj = closure()
+            self.setInjectorIfPossible(obj)
+            return obj
         }
         let aClass = (klass as NSObject.Type) // This is ugly, forcing a reliance on NSObject
-
-        return aClass()
+        
+        let obj = aClass()
+        self.setInjectorIfPossible(obj)
+        return obj
     }
 
     public func create(str: String) -> NSObject? {
-        return creationMethods[str]?()
+        let obj = creationMethods[str]?()
+        self.setInjectorIfPossible(obj)
+        return obj
+    }
+    
+    private func setInjectorIfPossible(object: NSObject?) {
+        object?.injector = self
     }
     
     // MARK: Adding creation methods

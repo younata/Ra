@@ -13,6 +13,8 @@
 		8955AAC61A79F81900D18868 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE68A16F1A79ADF80092D873 /* Quick.framework */; };
 		8955AAC71A79F82000D18868 /* Injector.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE68A1841A79AE980092D873 /* Injector.swift */; };
 		8955AAC81A79F82400D18868 /* InjectorSpecs.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE68A1821A79AE380092D873 /* InjectorSpecs.swift */; };
+		89EF4FF31A98341F0052A82F /* NSObject+Ra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EF4FF21A98341F0052A82F /* NSObject+Ra.swift */; };
+		89EF4FF41A98341F0052A82F /* NSObject+Ra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EF4FF21A98341F0052A82F /* NSObject+Ra.swift */; };
 		AE68A1401A79AD4A0092D873 /* Ra.h in Headers */ = {isa = PBXBuildFile; fileRef = AE68A13F1A79AD4A0092D873 /* Ra.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AE68A1461A79AD4A0092D873 /* Ra.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE68A13A1A79AD4A0092D873 /* Ra.framework */; };
 		AE68A1801A79AE1A0092D873 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE68A1621A79ADEE0092D873 /* Nimble.framework */; };
@@ -142,6 +144,7 @@
 		8955AAA41A79F72100D18868 /* Ra-iOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Ra-iOS.h"; sourceTree = "<group>"; };
 		8955AAAA1A79F72100D18868 /* Ra_iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Ra_iOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8955AAB01A79F72100D18868 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		89EF4FF21A98341F0052A82F /* NSObject+Ra.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+Ra.swift"; sourceTree = "<group>"; };
 		AE68A13A1A79AD4A0092D873 /* Ra.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Ra.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE68A13E1A79AD4A0092D873 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AE68A13F1A79AD4A0092D873 /* Ra.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Ra.h; sourceTree = "<group>"; };
@@ -251,6 +254,7 @@
 			children = (
 				AE68A13F1A79AD4A0092D873 /* Ra.h */,
 				AE68A1841A79AE980092D873 /* Injector.swift */,
+				89EF4FF21A98341F0052A82F /* NSObject+Ra.swift */,
 				AE68A13D1A79AD4A0092D873 /* Supporting Files */,
 			);
 			path = Ra;
@@ -567,6 +571,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89EF4FF41A98341F0052A82F /* NSObject+Ra.swift in Sources */,
 				8955AAC71A79F82000D18868 /* Injector.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -583,6 +588,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89EF4FF31A98341F0052A82F /* NSObject+Ra.swift in Sources */,
 				AE68A1851A79AE980092D873 /* Injector.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

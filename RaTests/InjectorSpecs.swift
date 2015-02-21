@@ -45,14 +45,27 @@ class InjectorSpec: QuickSpec {
                     it("Should create an object using the standard init()") {
                         expect(subject.create(NSObject.self)).to(beAnInstanceOf(NSObject.self))
                     }
+                    
+                    it("Should set the injector property") {
+                        let obj = subject.create(NSObject.self)
+                        expect(obj.injector).to(beIdenticalTo(subject))
+                    }
                 }
                 
                 describe("Creating objects using a custom initializer") {
-                    it("should use the custom initializer") {
+                    beforeEach {
                         subject.setCreationMethod(SomeObject.self) {
                             return SomeObject(object: ())
                         }
+                    }
+                    
+                    it("should use the custom initializer") {
                         expect(subject.create(SomeObject.self)).to(beAnInstanceOf(SomeObject.self))
+                    }
+                    
+                    it("Should set the injector property") {
+                        let obj = subject.create(SomeObject.self)
+                        expect(obj.injector).to(beIdenticalTo(subject))
                     }
                 }
             }
@@ -67,7 +80,12 @@ class InjectorSpec: QuickSpec {
                         return NSDictionary()
                     }
                     
-                    expect(subject.create("I die free")).to(beAKindOf(NSDictionary.self))
+                    if let obj = subject.create("I die free") {
+                        expect(obj.injector).to(beIdenticalTo(subject))
+                        expect(obj).to(beAKindOf(NSDictionary.self))
+                    } else {
+                        expect(false).to(beTruthy())
+                    }
                 }
             }
         }
