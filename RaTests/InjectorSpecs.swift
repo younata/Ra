@@ -54,9 +54,7 @@ class InjectorSpec: QuickSpec {
                 
                 describe("Creating objects using a custom initializer") {
                     beforeEach {
-                        subject.setCreationMethod(SomeObject.self) {
-                            return SomeObject(object: ())
-                        }
+                        subject.bind(SomeObject.self, to: SomeObject(object: ()))
                     }
                     
                     it("should use the custom initializer") {
@@ -76,9 +74,7 @@ class InjectorSpec: QuickSpec {
                 }
                 
                 it("should return an instance of a class if there is an existing creation method for the string") {
-                    subject.setCreationMethod("I die free") {
-                        return NSDictionary()
-                    }
+                    subject.bind("I die free", to: NSDictionary())
                     
                     if let obj = subject.create("I die free") {
                         expect(obj.injector).to(beIdenticalTo(subject))
@@ -93,9 +89,7 @@ class InjectorSpec: QuickSpec {
         describe("Setting creation methods") {
             context("when given a class") {
                 beforeEach {
-                    subject.setCreationMethod(AnObject.self) {
-                        return AnObject(object: NSObject())
-                    }
+                    subject.bind(AnObject.self, to: AnObject(object: NSObject()))
                 }
                 it("should set a custom creation method") {
                     expect((subject.create(AnObject.self) as AnObject).someObject).toNot(beNil())
@@ -103,15 +97,13 @@ class InjectorSpec: QuickSpec {
                 }
                 
                 it("should write over any existing creation method") {
-                    subject.setCreationMethod(AnObject.self) {
-                        return AnObject(otherObject: NSObject())
-                    }
+                    subject.bind(AnObject.self, to: AnObject(otherObject: NSObject()))
                     expect((subject.create(AnObject.self) as AnObject).someObject).to(beNil())
                     expect((subject.create(AnObject.self) as AnObject).someOtherObject).toNot(beNil())
                 }
                 
                 it("should allow the user to delete any existing creation method") {
-                    subject.removeCreationMethod(AnObject.self)
+                    subject.removeBinding(AnObject.self)
                     expect((subject.create(AnObject.self) as AnObject).someObject).to(beNil())
                     expect((subject.create(AnObject.self) as AnObject).someOtherObject).to(beNil())
                 }
@@ -119,9 +111,7 @@ class InjectorSpec: QuickSpec {
             
             context("when given a string") {
                 beforeEach {
-                    subject.setCreationMethod("Indeed") {
-                        return AnObject(object: NSObject())
-                    }
+                    subject.bind("Indeed", to: AnObject(object: NSObject()))
                 }
                 
                 it("should set a custom creation method") {
@@ -130,15 +120,13 @@ class InjectorSpec: QuickSpec {
                 }
                 
                 it("should write over any existing creation method") {
-                    subject.setCreationMethod("Indeed") {
-                        return AnObject(otherObject: NSObject())
-                    }
+                    subject.bind("Indeed", to: AnObject(otherObject: NSObject()))
                     expect((subject.create("Indeed") as AnObject).someObject).to(beNil())
                     expect((subject.create("Indeed") as AnObject).someOtherObject).toNot(beNil())
                 }
                 
                 it("should allow the user to delete any existing creation method") {
-                    subject.removeCreationMethod("Indeed")
+                    subject.removeBinding("Indeed")
                     expect(subject.create("Indeed")).to(beNil())
                 }
             }

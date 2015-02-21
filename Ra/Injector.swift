@@ -30,20 +30,20 @@ public class Injector {
     
     // MARK: Adding creation methods
     // TODO: rename "creation method" to something better.
-    
-    public func setCreationMethod(klass: AnyClass, creationMethod: (Void) -> (NSObject)) {
-        self.creationMethods[klass.description()] = creationMethod
+
+    public func bind(klass: AnyClass, to: @autoclosure () -> (NSObject)) {
+        self.creationMethods[klass.description()] = to
+    }
+
+    public func bind(string: String, to: @autoclosure () -> (NSObject)) {
+        self.creationMethods[string] = to
     }
     
-    public func setCreationMethod(string: String, creationMethod: (Void) -> (NSObject)) {
-        self.creationMethods[string] = creationMethod
-    }
-    
-    public func removeCreationMethod(klass: AnyClass) {
+    public func removeBinding(klass: AnyClass) {
         self.creationMethods.removeValueForKey(klass.description())
     }
     
-    public func removeCreationMethod(string: String) {
+    public func removeBinding(string: String) {
         self.creationMethods.removeValueForKey(string)
     }
 }
