@@ -39,6 +39,14 @@ public class Injector {
         self.creationMethods[string] = to
     }
     
+    public func bind(klass: AnyClass, toClosure: (Void) -> (NSObject)) {
+        self.creationMethods[klass.description()] = toClosure
+    }
+    
+    public func bind(string: String, toClosure: (Void) -> (NSObject)) {
+        self.creationMethods[string] = toClosure
+    }
+    
     public func removeBinding(klass: AnyClass) {
         self.creationMethods.removeValueForKey(klass.description())
     }

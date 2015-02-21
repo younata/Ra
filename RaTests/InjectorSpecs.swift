@@ -91,13 +91,16 @@ class InjectorSpec: QuickSpec {
                 beforeEach {
                     subject.bind(AnObject.self, to: AnObject(object: NSObject()))
                 }
+                
                 it("should set a custom creation method") {
                     expect((subject.create(AnObject.self) as AnObject).someObject).toNot(beNil())
                     expect((subject.create(AnObject.self) as AnObject).someOtherObject).to(beNil())
                 }
                 
                 it("should write over any existing creation method") {
-                    subject.bind(AnObject.self, to: AnObject(otherObject: NSObject()))
+                    subject.bind(AnObject.self) {
+                        return AnObject(otherObject: NSObject())
+                    }
                     expect((subject.create(AnObject.self) as AnObject).someObject).to(beNil())
                     expect((subject.create(AnObject.self) as AnObject).someOtherObject).toNot(beNil())
                 }
@@ -121,6 +124,9 @@ class InjectorSpec: QuickSpec {
                 
                 it("should write over any existing creation method") {
                     subject.bind("Indeed", to: AnObject(otherObject: NSObject()))
+                    subject.bind("Indeed") {
+                        return AnObject(otherObject: NSObject())
+                    }
                     expect((subject.create("Indeed") as AnObject).someObject).to(beNil())
                     expect((subject.create("Indeed") as AnObject).someOtherObject).toNot(beNil())
                 }
