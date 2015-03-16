@@ -1,5 +1,7 @@
 language: objective-c
 osx_image: xcode611
 
-before_install: git submodule update --init --recursive
+before_install:
+ - brew install carthage
+ - carthage update
 script: "rake"
