@@ -5,17 +5,18 @@ public class Injector {
 
     private var creationMethods : [String: (Void) -> (NSObject)] = [:]
 
-    public func create(klass: AnyClass) -> NSObject {
+    public func create(klass: AnyClass) -> AnyObject? {
         if let closure : (Void) -> (NSObject) = creationMethods[klass.description()] {
             let obj = closure()
             self.setInjectorIfPossible(obj)
             return obj
         }
-        let aClass = (klass as NSObject.Type) // This is ugly, forcing a reliance on NSObject
-        
-        let obj = aClass()
-        self.setInjectorIfPossible(obj)
-        return obj
+        if let aClass = klass as? NSObject.Type { // This is ugly, forcing a reliance on NSObject
+            let obj = aClass()
+            self.setInjectorIfPossible(obj)
+            return obj
+        }
+        return nil
     }
 
     public func create(str: String) -> NSObject? {
@@ -31,11 +32,11 @@ public class Injector {
     // MARK: Adding creation methods
     // TODO: rename "creation method" to something better.
 
-    public func bind(klass: AnyClass, to: @autoclosure () -> (NSObject)) {
+    public func bind(klass: AnyClass, @autoclosure(escaping) to: () -> (NSObject)) {
         self.creationMethods[klass.description()] = to
     }
 
-    public func bind(string: String, to: @autoclosure () -> (NSObject)) {
+    public func bind(string: String, @autoclosure(escaping) to: () -> (NSObject)) {
         self.creationMethods[string] = to
     }
     
