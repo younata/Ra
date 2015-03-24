@@ -82,9 +82,8 @@ class InjectorSpec: QuickSpec {
                 it("should return an instance of a class if there is an existing creation method for the string") {
                     subject.bind("I die free", to: NSDictionary())
                     
-                    if let obj = subject.create("I die free") {
+                    if let obj = subject.create("I die free") as? NSDictionary {
                         expect(obj.injector).to(beIdenticalTo(subject))
-                        expect(obj).to(beAKindOf(NSDictionary.self))
                     } else {
                         expect(false).to(beTruthy())
                     }
