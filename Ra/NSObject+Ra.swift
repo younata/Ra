@@ -8,7 +8,7 @@
 
 import Foundation
 
-var AssociatedObjectHandle = 0x1234567890
+var AssociatedObjectHandle = 0x12345678
 
 public extension NSObject {
     public internal(set) var injector : Injector? {
