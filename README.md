@@ -6,10 +6,15 @@ From [wikipedia](http://en.wikipedia.org/wiki/Ra):
 
 [![Build Status](https://api.travis-ci.org/younata/Ra.svg)](https://travis-ci.org/younata/Ra)
 
-There's (beta) swift 1.2 support on the [swift_1.2 branch](https://github.com/younata/Ra/tree/swift_1.2).
-
 ####Carthage
 
-add `github "younata/Ra"` to bring Ra into your swift 1.1 project.
+add `github "younata/Ra" == 0.1.0` to bring Ra into your swift 1.1 project.
 
-add `github "younata/Ra" "swift_1.2"` to bring Ra into your swift 1.2 project.
+add `github "younata/Ra"` to bring Ra into your swift 1.2 project.
+=======
+### Swift 1.2 Changes
+
+- You can now create and register objects that don't inherit from NSObject. There are a few caveats, though:
+  - You must bind to a string (classes for non-objc objects don't have a description method)
+  - You must pre-register the binding (there won't be a default initializer to pick otherwise
+- Because of the above change, `-create:` now returns type `AnyObject?`, in the event that the object isn't already registered and isn't a subclass of NSObject
