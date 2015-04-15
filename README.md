@@ -13,26 +13,26 @@ import Ra
 
 let injector = Ra.Injector()
 
-injector.create(NSObject.self) # returns an NSObject
+injector.create(NSObject.self) // returns an NSObject
 
 injector.bind("test", to: "result")
-injector.create("test") # returns "result"
+injector.create("test") // returns "result"
 
 class MyClass : NSObject {
 }
 
 let myObject = injector.create(MyClass) as! MyClass
-myObject.injector # returns injector
+myObject.injector // returns injector
 
 injector.bind("test") {
   return ["hello": "world"]
 }
 
-injector.create("test") # returns ["Hello": "world"], is evaluated/created when this is called.
-# note that this just overwrote the previous binding.
+injector.create("test") // returns ["Hello": "world"], is evaluated/created when this is called.
+// note that this just overwrote the previous binding.
 
 injector.removeBinding("test")
-injector.create("test") # returns nil
+injector.create("test") // returns nil
 
 ```
 
