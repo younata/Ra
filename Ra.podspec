@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "Ra"
-  s.version      = "0.0.1"
+  s.version      = "0.3.0"
   s.summary      = "A Dependency Injection framework for Swift."
 
   s.homepage     = "https://github.com/younata/Ra"

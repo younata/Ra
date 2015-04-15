@@ -132,6 +132,11 @@ class InjectorSpec: QuickSpec {
                     expect((subject.create(AnObject.self) as! AnObject).someObject).to(beNil())
                     expect((subject.create(AnObject.self) as! AnObject).someOtherObject).to(beNil())
                 }
+
+                it("should have no effect when trying to remove an object not registered") {
+                    subject.removeBinding(NSObject.self)
+                    expect(subject.create(NSObject.self)).toNot(beNil())
+                }
             }
             
             context("when given a string") {
