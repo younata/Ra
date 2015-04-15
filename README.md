@@ -6,11 +6,14 @@ From [wikipedia](http://en.wikipedia.org/wiki/Ra):
 
 [![Build Status](https://api.travis-ci.org/younata/Ra.svg)](https://travis-ci.org/younata/Ra)
 
-####Carthage
+####Carthage Instructions
 
-add `github "younata/Ra" == 0.1.0` to bring Ra into your swift 1.1 project.
+For Swift 1.1
+* add `github "younata/Ra" == 0.1.0`
 
-add `github "younata/Ra"` to bring Ra into your swift 1.2 project.
+For Swift 1.2
+* add `github "younata/Ra"`
+
 =======
 ### Swift 1.2 Changes
 
