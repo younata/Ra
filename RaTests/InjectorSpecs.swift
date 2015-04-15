@@ -31,6 +31,10 @@ class AnObject : NSObject {
     }
 }
 
+struct aStruct {
+    var someInstance : Int = 0
+}
+
 class InjectorSpec: QuickSpec {
     override func spec() {
         var subject : Injector! = nil
@@ -84,6 +88,19 @@ class InjectorSpec: QuickSpec {
                     
                     if let obj = subject.create("I die free") as? NSDictionary {
                         expect(obj.injector).to(beIdenticalTo(subject))
+                    } else {
+                        expect(false).to(beTruthy())
+                    }
+                }
+
+                it("should allow structs and such to be created") {
+                    var theStruct = aStruct()
+                    subject.bind("Hammond of Texas", to: theStruct)
+
+                    theStruct.someInstance = 20
+
+                    if let str = subject.create("Hammond of Texas") as? aStruct {
+                        expect(str.someInstance).to(equal(20))
                     } else {
                         expect(false).to(beTruthy())
                     }
