@@ -63,6 +63,10 @@ For Swift 1.1
 =======
 ### ChangeLog
 
+#### 0.3.1
+
+- Add official support for injector modules. Use the new convenience initializer `init(modules: InjectorModule...)` to configure with any number of objects that confirm to InjectorModule. Note that if there are any conflicts in which injectormodule binds which, the last one to be passed in will succeed.
+
 #### 0.3.0
 
 - Simplified public interface, there's now only 1 create, 2 add binding and 1 remove binding public methods, which take Any types as there arguments, but really only do things when given an argument of type `AnyClass` or `String`. Otherwise they either silently fail, or return nil.
@@ -79,4 +83,9 @@ For Swift 1.1
 
 - Swift 1.1 support
 - Can only create/bind objects that inherit from NSObject
+
+=======
+### License
+
+[MIT](LICENSE)
 

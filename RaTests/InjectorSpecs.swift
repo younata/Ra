@@ -42,6 +42,22 @@ class InjectorSpec: QuickSpec {
         beforeEach {
             subject = Ra.Injector()
         }
+
+        describe("initting with modules") {
+            class SomeModule : InjectorModule {
+                func configureInjector(injector: Injector) {
+                    injector.bind("hello", to: NSObject())
+                }
+            }
+
+            beforeEach {
+                subject = Injector(module: SomeModule())
+            }
+
+            it("should configure it") {
+                expect(subject.create("hello") is NSObject).to(beTruthy())
+            }
+        }
         
         describe("Creating objects") {
             describe("through classes") {

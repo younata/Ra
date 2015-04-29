@@ -1,7 +1,18 @@
 import Foundation
 
+public protocol InjectorModule {
+    func configureInjector(injector: Injector)
+}
+
 public class Injector {
     public init() {}
+
+    public convenience init(module: InjectorModule...) {
+        self.init()
+        for module in module {
+            module.configureInjector(self)
+        }
+    }
 
     private var creationMethods : [String: (Void) -> (Any)] = [:]
 
