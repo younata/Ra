@@ -20,20 +20,6 @@
                ReferencedContainer = "container:Ra.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "8955AAA91A79F72100D18868"
-               BuildableName = "Ra_iOSTests.xctest"
-               BlueprintName = "Ra-iOSTests"
-               ReferencedContainer = "container:Ra.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
@@ -42,16 +28,6 @@
       shouldUseLaunchSchemeArgsEnv = "YES"
       buildConfiguration = "Debug">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "8955AAA91A79F72100D18868"
-               BuildableName = "Ra_iOSTests.xctest"
-               BlueprintName = "Ra-iOSTests"
-               ReferencedContainer = "container:Ra.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
