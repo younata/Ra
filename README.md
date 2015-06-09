@@ -40,6 +40,10 @@ injector.create("test") // returns nil
 
 ####Carthage
 
+For Swift 2.0
+
+* add `github "younata/Ra" "swift_2"`
+
 For Swift 1.2
 
 * add `github "younata/Ra"`
@@ -52,6 +56,10 @@ For Swift 1.1
 
 Make sure that `use_frameworks!` is defined in your Podfile
 
+For Swift 2.0
+
+* add `pod "Ra" :git => "https://github.com/younata/Ra.git", :branch => "swift_2"`
+
 For Swift 1.2
 
 * add `pod "Ra" :git => "https://github.com/younata/Ra.git"`
@@ -62,6 +70,8 @@ For Swift 1.1
 
 =======
 ### ChangeLog
+
+See the [Swift_2 branch](https://github.com/younata/Ra/tree/swift_2) for Swift 2.0 Support (and changelog), will be merged after Swift 2 becomes actually released (around September).
 
 #### 0.3.1
 
