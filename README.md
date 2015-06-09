@@ -71,7 +71,11 @@ For Swift 1.1
 =======
 ### ChangeLog
 
-See the [Swift_2 branch](https://github.com/younata/Ra/tree/swift_2) for Swift 2.0 Support (and changelog), will be merged after Swift 2 becomes actually released (around September).
+#### 0.4.0
+
+- Add the Injectable protocol, that can be optionally conformed to so that you can configure your object at Init time with stuff from an Injector.
+- Swift 2.0 support
+- WatchOS support
 
 #### 0.3.1
 
