@@ -1,4 +1,4 @@
-Ra: Dependency Injection in swift
+R a: Dependency Injection in swift
 
 From [wikipedia](http://en.wikipedia.org/wiki/Ra): 
 

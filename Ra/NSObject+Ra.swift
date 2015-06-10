@@ -10,7 +10,7 @@ public extension NSObject {
             return objc_getAssociatedObject(self, &AssociatedKeys.injectorKey) as? Injector
         }
         set {
-            objc_setAssociatedObject(self, &AssociatedKeys.injectorKey, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_ASSIGN)
+            objc_setAssociatedObject(self, &AssociatedKeys.injectorKey, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         }
     }
 }
