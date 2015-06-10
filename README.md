@@ -1,4 +1,4 @@
-Ra: Dependency Injection in swift
+R a: Dependency Injection in swift
 
 From [wikipedia](http://en.wikipedia.org/wiki/Ra): 
 
@@ -40,6 +40,10 @@ injector.create("test") // returns nil
 
 ####Carthage
 
+For Swift 2.0
+
+* add `github "younata/Ra" "swift_2"`
+
 For Swift 1.2
 
 * add `github "younata/Ra"`
@@ -52,6 +56,10 @@ For Swift 1.1
 
 Make sure that `use_frameworks!` is defined in your Podfile
 
+For Swift 2.0
+
+* add `pod "Ra" :git => "https://github.com/younata/Ra.git", :branch => "swift_2"`
+
 For Swift 1.2
 
 * add `pod "Ra" :git => "https://github.com/younata/Ra.git"`
@@ -62,6 +70,11 @@ For Swift 1.1
 
 =======
 ### ChangeLog
+
+#### 0.4.0
+
+- Add the Injectable protocol, that can be optionally conformed to so that you can configure your object at Init time with stuff from an Injector.
+- Swift 2.0 support
 
 #### 0.3.1
 

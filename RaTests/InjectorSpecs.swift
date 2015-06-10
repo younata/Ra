@@ -31,6 +31,18 @@ class AnObject : NSObject {
     }
 }
 
+class InjectableObject : NSObject, Injectable {
+    // NSObject gives us the default initializer. This is testing that it is not called.
+    var wasInjected : Bool = false
+    required init(injector: Injector) {
+        wasInjected = true
+    }
+
+    override init() {
+        super.init()
+    }
+}
+
 struct aStruct {
     var someInstance : Int = 0
 }
@@ -86,6 +98,17 @@ class InjectorSpec: QuickSpec {
                     
                     it("Should set the injector property") {
                         if let obj = subject.create(SomeObject.self) as? SomeObject {
+                            expect(obj.injector).to(beIdenticalTo(subject))
+                        } else {
+                            expect(false).to(beTruthy())
+                        }
+                    }
+                }
+
+                describe("Creating objects conforming to Injectable") {
+                    it("should use the init(injector:) initializer") {
+                        if let obj = subject.create(InjectableObject.self) as? InjectableObject {
+                            expect(obj.wasInjected).to(beTruthy())
                             expect(obj.injector).to(beIdenticalTo(subject))
                         } else {
                             expect(false).to(beTruthy())
@@ -152,6 +175,12 @@ class InjectorSpec: QuickSpec {
                 it("should have no effect when trying to remove an object not registered") {
                     subject.removeBinding(NSObject.self)
                     expect(subject.create(NSObject.self)).toNot(beNil())
+                }
+
+                it("should use this method even when the object conforms to Injectable") {
+                    let obj = InjectableObject()
+                    subject.bind(InjectableObject.self, to: obj)
+                    expect((subject.create(InjectableObject.self) as! InjectableObject)).to(beIdenticalTo(obj))
                 }
             }
             

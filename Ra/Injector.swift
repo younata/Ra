@@ -1,5 +1,9 @@
 import Foundation
 
+public protocol Injectable {
+    init(injector: Injector)
+}
+
 public protocol InjectorModule {
     func configureInjector(injector: Injector)
 }
@@ -28,6 +32,11 @@ public class Injector {
     private func create(klass: AnyClass) -> Any? {
         if let closure : (Void) -> (Any) = creationMethods[klass.description()] {
             let obj : Any = closure()
+            self.setInjectorIfPossible(obj)
+            return obj
+        }
+        if let inj = klass as? Injectable.Type {
+            let obj = inj(injector: self)
             self.setInjectorIfPossible(obj)
             return obj
         }
