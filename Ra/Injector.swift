@@ -36,12 +36,12 @@ public class Injector {
             return obj
         }
         if let inj = klass as? Injectable.Type {
-            let obj = inj(injector: self)
+            let obj = inj.init(injector: self)
             self.setInjectorIfPossible(obj)
             return obj
         }
         if let aClass = klass as? NSObject.Type {
-            let obj = aClass()
+            let obj = aClass.init()
             self.setInjectorIfPossible(obj)
             return obj
         }
