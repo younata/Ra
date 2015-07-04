@@ -31,16 +31,13 @@ class AnObject : NSObject {
     }
 }
 
-class InjectableObject : NSObject, Injectable {
-    // NSObject gives us the default initializer. This is testing that it is not called.
+class InjectableObject : Injectable {
     var wasInjected : Bool = false
     required init(injector: Injector) {
         wasInjected = true
     }
 
-    override init() {
-        super.init()
-    }
+    init() {}
 }
 
 struct aStruct {
@@ -107,11 +104,10 @@ class InjectorSpec: QuickSpec {
 
                 describe("Creating objects conforming to Injectable") {
                     it("should use the init(injector:) initializer") {
-                        if let obj = subject.create(InjectableObject.self) as? InjectableObject {
+                        let obj = subject.create(InjectableObject.self)
+                        expect(obj is InjectableObject).to(beTruthy())
+                        if let obj = obj as? InjectableObject {
                             expect(obj.wasInjected).to(beTruthy())
-                            expect(obj.injector).to(beIdenticalTo(subject))
-                        } else {
-                            expect(false).to(beTruthy())
                         }
                     }
                 }
@@ -180,7 +176,7 @@ class InjectorSpec: QuickSpec {
                 it("should use this method even when the object conforms to Injectable") {
                     let obj = InjectableObject()
                     subject.bind(InjectableObject.self, to: obj)
-                    expect((subject.create(InjectableObject.self) as! InjectableObject)).to(beIdenticalTo(obj))
+                    expect((subject.create(InjectableObject.self) as? InjectableObject)?.wasInjected).to(beFalsy())
                 }
             }
             
