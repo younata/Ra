@@ -25,8 +25,10 @@ public class Injector {
             return create(klass)
         } else if let str = obj as? String {
             return create(str)
+        } else {
+            let mirror = reflect(obj)
+            return create(mirror.summary)
         }
-        return nil
     }
 
     private func create(klass: AnyClass) -> Any? {
@@ -67,6 +69,9 @@ public class Injector {
             bind(klass, to: to)
         } else if let str = obj as? String {
             bind(str, to: to)
+        } else {
+            let mirror = reflect(obj)
+            bind(mirror.summary, to: to)
         }
     }
 
