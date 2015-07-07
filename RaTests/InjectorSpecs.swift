@@ -40,7 +40,9 @@ class InjectableObject : Injectable {
     init() {}
 }
 
-struct aStruct {
+protocol aProtocol {}
+
+struct aStruct : aProtocol {
     var someInstance : Int = 0
 }
 
@@ -177,6 +179,16 @@ class InjectorSpec: QuickSpec {
                     let obj = InjectableObject()
                     subject.bind(InjectableObject.self, to: obj)
                     expect((subject.create(InjectableObject.self) as? InjectableObject)?.wasInjected).to(beFalsy())
+                }
+            }
+
+            context("when given a protocol") {
+                beforeEach {
+                    subject.bind(aProtocol.self, to: aStruct())
+                }
+
+                it("should set the creation method") {
+                    expect(subject.create(aProtocol.self) is aStruct).to(beTruthy())
                 }
             }
             
