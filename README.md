@@ -1,4 +1,4 @@
-R a: Dependency Injection in swift
+Ra: Dependency Injection in swift
 
 From [wikipedia](http://en.wikipedia.org/wiki/Ra): 
 
@@ -74,7 +74,9 @@ For Swift 1.1
 #### 0.4.0
 
 - Add the Injectable protocol, that can be optionally conformed to so that you can configure your object at Init time with stuff from an Injector.
-- Swift 2.0 support
+- Swift 2.0 support.
+- Sets the proper flag to make this usable in extensions.
+- Allows anything to be a key (protocols drove out this change).
 - WatchOS support
 
 #### 0.3.1
