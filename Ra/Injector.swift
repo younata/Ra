@@ -26,8 +26,8 @@ public class Injector {
         } else if let str = obj as? String {
             return create(str)
         } else {
-            let mirror = reflect(obj)
-            return create(mirror.summary)
+            let mirror = Mirror(reflecting: obj)
+            return create(mirror.description)
         }
     }
 
@@ -70,8 +70,8 @@ public class Injector {
         } else if let str = obj as? String {
             bind(str, to: to)
         } else {
-            let mirror = reflect(obj)
-            bind(mirror.summary, to: to)
+            let mirror = Mirror(reflecting: obj)
+            bind(mirror.description, to: to)
         }
     }
 
