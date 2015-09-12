@@ -42,11 +42,11 @@ injector.create("test") // returns nil
 
 For Swift 2.0
 
-* add `github "younata/Ra" "swift_2"`
+* add `github "younata/Ra"`
 
 For Swift 1.2
 
-* add `github "younata/Ra"`
+* add `github "younata/Ra" ~= 0.3`
 
 For Swift 1.1
 
@@ -58,11 +58,11 @@ Make sure that `use_frameworks!` is defined in your Podfile
 
 For Swift 2.0
 
-* add `pod "Ra" :git => "https://github.com/younata/Ra.git", :branch => "swift_2"`
+* add `pod "Ra" :git => "https://github.com/younata/Ra.git"`
 
 For Swift 1.2
 
-* add `pod "Ra" :git => "https://github.com/younata/Ra.git"`
+* add `pod "Ra" :git => "https://github.com/younata/Ra.git", :tag => "v0.3.2"`
 
 For Swift 1.1
 
