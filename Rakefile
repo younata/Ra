@@ -6,7 +6,7 @@ namespace "test" do
   desc "Run unit tests for all iOS targets"
   task :ios do |t|
     `killall 'iOS Simulator'`
-    run "set -o pipefail && xcodebuild -project Ra.xcodeproj -scheme Ra-iOSTests clean test 2>/dev/null | xcpretty -c && echo 'Tests succeeded'"
+    run "set -o pipefail && xcodebuild -project Ra.xcodeproj -scheme Ra-iOSTests -destination 'platform=iOS Simulator,name=iPhone 6' clean test 2>/dev/null | xcpretty -c && echo 'Tests succeeded'"
   end
 
   desc "Run unit tests for all OS X targets"
