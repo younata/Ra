@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		892F9A601BE2EC0F002F181F /* Ra.h in Headers */ = {isa = PBXBuildFile; fileRef = 8955AAA41A79F72100D18868 /* Ra.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		892F9A611BE2EC10002F181F /* Ra.h in Headers */ = {isa = PBXBuildFile; fileRef = 8955AAA41A79F72100D18868 /* Ra.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8955AAA51A79F72100D18868 /* Ra.h in Headers */ = {isa = PBXBuildFile; fileRef = 8955AAA41A79F72100D18868 /* Ra.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8955AAAB1A79F72100D18868 /* Ra.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8955AAA01A79F72100D18868 /* Ra.framework */; };
 		8955AAC71A79F82000D18868 /* Injector.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE68A1841A79AE980092D873 /* Injector.swift */; };
@@ -20,8 +22,8 @@
 		8974C5471AB7733C002B51EE /* Nimble.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 8974C53F1AB77291002B51EE /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8974C5481AB7733C002B51EE /* Quick.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 8974C5401AB77291002B51EE /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		89CAD4CD1BA4906F006D79FC /* Ra.h in Headers */ = {isa = PBXBuildFile; fileRef = 89CAD4CC1BA4906F006D79FC /* Ra.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		89CAD4D21BA490A3006D79FC /* Injector.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE68A1841A79AE980092D873 /* Injector.swift */; settings = {ASSET_TAGS = (); }; };
-		89CAD4D31BA490A3006D79FC /* NSObject+Ra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EF4FF21A98341F0052A82F /* NSObject+Ra.swift */; settings = {ASSET_TAGS = (); }; };
+		89CAD4D21BA490A3006D79FC /* Injector.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE68A1841A79AE980092D873 /* Injector.swift */; };
+		89CAD4D31BA490A3006D79FC /* NSObject+Ra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EF4FF21A98341F0052A82F /* NSObject+Ra.swift */; };
 		89EF4FF31A98341F0052A82F /* NSObject+Ra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EF4FF21A98341F0052A82F /* NSObject+Ra.swift */; };
 		89EF4FF41A98341F0052A82F /* NSObject+Ra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EF4FF21A98341F0052A82F /* NSObject+Ra.swift */; };
 		AE68A1461A79AD4A0092D873 /* Ra.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE68A13A1A79AD4A0092D873 /* Ra.framework */; };
@@ -261,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				89CAD4CD1BA4906F006D79FC /* Ra.h in Headers */,
+				892F9A601BE2EC0F002F181F /* Ra.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,6 +271,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				892F9A611BE2EC10002F181F /* Ra.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -743,6 +747,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = Ra/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -763,6 +768,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = Ra/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -778,6 +784,7 @@
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = NO;
 				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 					"$(inherited)",
@@ -800,6 +807,7 @@
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = NO;
 				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 					"$(inherited)",
@@ -841,6 +849,7 @@
 				89CAD4D11BA4906F006D79FC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AE68A1341A79AD4A0092D873 /* Build configuration list for PBXProject "Ra" */ = {
 			isa = XCConfigurationList;

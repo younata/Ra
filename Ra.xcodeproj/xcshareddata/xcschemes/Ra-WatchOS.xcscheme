@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "89CAD4C91BA4906F006D79FC"
-               BuildableName = "Ra-WatchOS.framework"
+               BuildableName = "Ra.framework"
                BlueprintName = "Ra-WatchOS"
                ReferencedContainer = "container:Ra.xcodeproj">
             </BuildableReference>
@@ -46,7 +46,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "89CAD4C91BA4906F006D79FC"
-            BuildableName = "Ra-WatchOS.framework"
+            BuildableName = "Ra.framework"
             BlueprintName = "Ra-WatchOS"
             ReferencedContainer = "container:Ra.xcodeproj">
          </BuildableReference>
@@ -64,7 +64,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "89CAD4C91BA4906F006D79FC"
-            BuildableName = "Ra-WatchOS.framework"
+            BuildableName = "Ra.framework"
             BlueprintName = "Ra-WatchOS"
             ReferencedContainer = "container:Ra.xcodeproj">
          </BuildableReference>
