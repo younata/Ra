@@ -57,7 +57,7 @@ class InjectorSpec: QuickSpec {
         describe("initting with modules") {
             class SomeModule : InjectorModule {
                 func configureInjector(injector: Injector) {
-                    injector.bind("hello", to: NSObject())
+                    injector.bind("hello", toInstance: NSObject())
                 }
             }
 
@@ -74,11 +74,11 @@ class InjectorSpec: QuickSpec {
             describe("through classes") {
                 describe("Creating objects using standard initializer") {
                     it("Should create an object using the standard init()") {
-                        expect(subject.create(NSObject.self) is NSObject).to(beTruthy())
+                        expect(subject.create(NSObject)).to(beAKindOf(NSObject))
                     }
                     
                     it("Should set the injector property") {
-                        if let obj = subject.create(NSObject.self) as? NSObject {
+                        if let obj = subject.create(NSObject) {
                             expect(obj.injector).to(beIdenticalTo(subject))
                         } else {
                             expect(false).to(beTruthy())
@@ -88,15 +88,15 @@ class InjectorSpec: QuickSpec {
                 
                 describe("Creating objects using a custom initializer") {
                     beforeEach {
-                        subject.bind(SomeObject.self, to: SomeObject(object: ()))
+                        subject.bind(SomeObject.self, toInstance: SomeObject(object: ()))
                     }
                     
                     it("should use the custom initializer") {
-                        expect(subject.create(SomeObject.self) is SomeObject).to(beTruthy())
+                        expect(subject.create(SomeObject)).to(beAKindOf(SomeObject))
                     }
                     
                     it("Should set the injector property") {
-                        if let obj = subject.create(SomeObject.self) as? SomeObject {
+                        if let obj = subject.create(SomeObject) {
                             expect(obj.injector).to(beIdenticalTo(subject))
                         } else {
                             expect(false).to(beTruthy())
@@ -106,11 +106,8 @@ class InjectorSpec: QuickSpec {
 
                 describe("Creating objects conforming to Injectable") {
                     it("should use the init(injector:) initializer") {
-                        let obj = subject.create(InjectableObject.self)
-                        expect(obj is InjectableObject).to(beTruthy())
-                        if let obj = obj as? InjectableObject {
-                            expect(obj.wasInjected).to(beTruthy())
-                        }
+                        let obj = subject.create(InjectableObject)
+                        expect(obj?.wasInjected).to(beTruthy())
                     }
                 }
             }
@@ -121,7 +118,7 @@ class InjectorSpec: QuickSpec {
                 }
                 
                 it("should return an instance of a class if there is an existing creation method for the string") {
-                    subject.bind("I die free", to: NSDictionary())
+                    subject.bind("I die free", toInstance: NSDictionary())
                     
                     if let obj = subject.create("I die free") as? NSDictionary {
                         expect(obj.injector).to(beIdenticalTo(subject))
@@ -131,16 +128,16 @@ class InjectorSpec: QuickSpec {
                 }
 
                 it("should allow structs and such to be created") {
+                    subject.bind("Hammond of Texas", toInstance: aStruct())
+
+                    expect(subject.create("Hammond of Texas")).toNot(beNil())
+
                     var theStruct = aStruct()
-                    subject.bind("Hammond of Texas", to: theStruct)
+                    subject.bind("Hammond of Texas", to: { theStruct })
 
-                    theStruct.someInstance = 20
+                    theStruct.someInstance = 100
 
-                    if let str = subject.create("Hammond of Texas") as? aStruct {
-                        expect(str.someInstance).to(equal(20))
-                    } else {
-                        expect(false).to(beTruthy())
-                    }
+                    expect((subject.create("Hammond of Texas") as? aStruct)?.someInstance).to(equal(100))
                 }
             }
         }
@@ -148,43 +145,43 @@ class InjectorSpec: QuickSpec {
         describe("Setting creation methods") {
             context("when given a class") {
                 beforeEach {
-                    subject.bind(AnObject.self, to: AnObject(object: NSObject()))
+                    subject.bind(AnObject.self, toInstance: AnObject(object: NSObject()))
                 }
                 
                 it("should set a custom creation method") {
-                    expect((subject.create(AnObject.self) as! AnObject).someObject).toNot(beNil())
-                    expect((subject.create(AnObject.self) as! AnObject).someOtherObject).to(beNil())
+                    expect(subject.create(AnObject)?.someObject).toNot(beNil())
+                    expect(subject.create(AnObject)?.someOtherObject).to(beNil())
                 }
                 
                 it("should write over any existing creation method") {
                     subject.bind(AnObject.self) {
                         return AnObject(otherObject: NSObject())
                     }
-                    expect((subject.create(AnObject.self) as! AnObject).someObject).to(beNil())
-                    expect((subject.create(AnObject.self) as! AnObject).someOtherObject).toNot(beNil())
+                    expect(subject.create(AnObject)?.someObject).to(beNil())
+                    expect(subject.create(AnObject)?.someOtherObject).toNot(beNil())
                 }
                 
                 it("should allow the user to delete any existing creation method") {
-                    subject.removeBinding(AnObject.self)
-                    expect((subject.create(AnObject.self) as! AnObject).someObject).to(beNil())
-                    expect((subject.create(AnObject.self) as! AnObject).someOtherObject).to(beNil())
+                    subject.removeBinding(AnObject)
+                    expect(subject.create(AnObject)?.someObject).to(beNil())
+                    expect(subject.create(AnObject)?.someOtherObject).to(beNil())
                 }
 
                 it("should have no effect when trying to remove an object not registered") {
-                    subject.removeBinding(NSObject.self)
-                    expect(subject.create(NSObject.self)).toNot(beNil())
+                    subject.removeBinding(NSObject)
+                    expect(subject.create(NSObject)).toNot(beNil())
                 }
 
                 it("should use this method even when the object conforms to Injectable") {
                     let obj = InjectableObject()
-                    subject.bind(InjectableObject.self, to: obj)
-                    expect((subject.create(InjectableObject.self) as? InjectableObject)?.wasInjected).to(beFalsy())
+                    subject.bind(InjectableObject.self, toInstance: obj)
+                    expect(subject.create(InjectableObject.self)?.wasInjected).to(beFalsy())
                 }
             }
 
             context("when given a protocol") {
                 beforeEach {
-                    subject.bind(aProtocol.self, to: aStruct())
+                    subject.bind(aProtocol.self, toInstance: aStruct())
                 }
 
                 it("should set the creation method") {
@@ -194,7 +191,7 @@ class InjectorSpec: QuickSpec {
             
             context("when given a string") {
                 beforeEach {
-                    subject.bind("Indeed", to: AnObject(object: NSObject()))
+                    subject.bind("Indeed", toInstance: AnObject(object: NSObject()))
                 }
                 
                 it("should set a custom creation method") {
@@ -203,10 +200,8 @@ class InjectorSpec: QuickSpec {
                 }
                 
                 it("should write over any existing creation method") {
-                    subject.bind("Indeed", to: AnObject(otherObject: NSObject()))
-                    subject.bind("Indeed") {
-                        return AnObject(otherObject: NSObject())
-                    }
+                    subject.bind("Indeed", toInstance: AnObject(otherObject: NSObject()))
+                    subject.bind("Indeed", to: { AnObject(otherObject: NSObject()) })
                     expect((subject.create("Indeed") as! AnObject).someObject).to(beNil())
                     expect((subject.create("Indeed") as! AnObject).someOtherObject).toNot(beNil())
                 }

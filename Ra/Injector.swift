@@ -20,15 +20,19 @@ public class Injector {
 
     private var creationMethods : [String: (Void) -> (Any)] = [:]
 
-    public func create(obj: Any) -> Any? {
-        if let klass: AnyClass = obj as? AnyClass {
-            return create(klass)
-        } else if let str = obj as? String {
-            return create(str)
+    public func create<T>(key: T.Type) -> T? {
+        if let klass: AnyClass = key as? AnyClass {
+            return create(klass) as? T
         } else {
-            let mirror = Mirror(reflecting: obj)
-            return create(mirror.description)
+            let mirror = Mirror(reflecting: key)
+            return create(mirror.description) as? T
         }
+    }
+
+    public func create(key: String) -> Any? {
+        let obj: Any? = creationMethods[key]?()
+        self.setInjectorIfPossible(obj)
+        return obj
     }
 
     private func create(klass: AnyClass) -> Any? {
@@ -49,12 +53,6 @@ public class Injector {
         }
         return nil
     }
-
-    private func create(str: String) -> Any? {
-        let obj: Any? = creationMethods[str]?()
-        self.setInjectorIfPossible(obj)
-        return obj
-    }
     
     private func setInjectorIfPossible(object: Any?) {
         if let obj = object as? NSObject {
@@ -64,46 +62,44 @@ public class Injector {
     
     // MARK: Adding bindings
 
-    public func bind(obj: Any, @autoclosure(escaping) to: () -> (Any)) {
+    public func bind<T>(obj: T.Type, to: () -> (T)) {
         if let klass: AnyClass = obj as? AnyClass {
-            bind(klass, to: to)
-        } else if let str = obj as? String {
-            bind(str, to: to)
+            self.bind(klass, to: to)
         } else {
             let mirror = Mirror(reflecting: obj)
-            bind(mirror.description, to: to)
+            self.bind(mirror.description, to: to)
         }
     }
 
-    private func bind(klass: AnyClass, @autoclosure(escaping) to: () -> (Any)) {
-        self.creationMethods[klass.description()] = to
-    }
-
-    private func bind(string: String, @autoclosure(escaping) to: () -> (Any)) {
+    public func bind(string: String, to: () -> (Any)) {
         self.creationMethods[string] = to
     }
 
-    public func bind(obj: Any, toClosure: (Void) -> (Any)) {
+    private func bind(klass: AnyClass, to: () -> (Any)) {
+        self.creationMethods[klass.description()] = to
+    }
+
+    public func bind<T>(obj: T.Type, toInstance: T) {
         if let klass: AnyClass = obj as? AnyClass {
-            bind(klass, toClosure: toClosure)
-        } else if let str = obj as? String {
-            bind(str, toClosure: toClosure)
+            self.bind(klass, to: {toInstance})
+        } else {
+            let mirror = Mirror(reflecting: obj)
+            self.bind(mirror.description, to: {toInstance})
         }
     }
 
-    private func bind(klass: AnyClass, toClosure: (Void) -> (Any)) {
-        self.creationMethods[klass.description()] = toClosure
-    }
-    
-    private func bind(string: String, toClosure: (Void) -> (Any)) {
-        self.creationMethods[string] = toClosure
+    public func bind(string: String, toInstance: Any) {
+        self.bind(string, to: {toInstance})
     }
 
     public func removeBinding(obj: Any) {
         if let klass: AnyClass = obj as? AnyClass {
-            removeBinding(klass)
+            self.removeBinding(klass)
         } else if let str = obj as? String {
-            removeBinding(str)
+            self.removeBinding(str)
+        } else {
+            let mirror = Mirror(reflecting: obj)
+            self.removeBinding(mirror.description)
         }
     }
     

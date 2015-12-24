@@ -13,16 +13,16 @@ import Ra
 
 let injector = Ra.Injector()
 
-injector.create(NSObject.self) // returns an NSObject
+injector.create(NSObject) // returns an NSObject, no need to cast
 
 injector.bind("test", to: "result")
-injector.create("test") // returns "result"
+injector.create("test") // returns "result", must cast.
 
 class MyClass : NSObject {
 }
 
-let myObject = injector.create(MyClass) as! MyClass
-myObject.injector // returns injector
+let myObject = injector.create(MyClass)
+myObject?.injector // returns injector
 
 injector.bind("test") {
   return ["hello": "world"]
@@ -40,7 +40,7 @@ injector.create("test") // returns nil
 
 ####Carthage
 
-For Swift 2.0
+For Swift 2.0/2.1
 
 * add `github "younata/Ra"`
 
@@ -56,7 +56,7 @@ For Swift 1.1
 
 Make sure that `use_frameworks!` is defined in your Podfile
 
-For Swift 2.0
+For Swift 2.0/2.1
 
 * add `pod "Ra" :git => "https://github.com/younata/Ra.git"`
 
@@ -70,6 +70,32 @@ For Swift 1.1
 
 =======
 ### ChangeLog
+
+#### 0.5.0
+
+- Add type checking/generics for anything that asks for something of a given type/protocol. Using a string as the key still doesn't do type checking. This means that you don't have to type check what you get back.
+- Change the binding API to not use autoclosures, and instead allow you to directly bind instances. This effectively treats that instance as a singleton (the singleton behavior only works for types that are classes, not structs), for example:
+
+```swift
+injector.bind(NSObject, toInstance: NSObject())
+
+injector.create(NSObject) === injector.create(NSObject) // true
+
+struct MyStruct {
+    var myValue = 10
+
+    init() {}
+}
+
+var myStruct = MyStruct()
+
+myStruct.myValue = 100
+
+injector.bind(MyStruct, toInstance: myStruct)
+injector.create(MyStruct)?.myValue // 10
+```
+- `Type.self` is no longer necessary when using type names.
+- tvOS support
 
 #### 0.4.0
 
