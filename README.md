@@ -18,13 +18,7 @@ injector.create(NSObject) // returns an NSObject, no need to cast
 injector.bind("test", to: "result")
 injector.create("test") // returns "result", must cast.
 
-class MyClass : NSObject {
-}
-
-let myObject = injector.create(MyClass)
-myObject?.injector // returns injector
-
-injector.bind("test") {
+injector.bind("test") { injector in
   return ["hello": "world"]
 }
 
@@ -68,8 +62,21 @@ For Swift 1.1
 
 * add `pod "Ra" :git => "https://github.com/younata/Ra.git", :tag => "0.1.0"`
 
+
+#####Swift Package Manager
+
+add `.Package(url: "https://github.com/younata/Ra", majorVersion: 1)` to the dependencies array in your `Package.swift` file.
+
+
 =======
 ### ChangeLog
+
+#### 1.0.0
+
+- Add support for the Swift Package Manager
+- Removed extension adding the injector instance to every NSObject created.
+- Binding with a block now takes an injector instance as the argument
+- Adds a smoke test for a somewhat-complicated dependency graph
 
 #### 0.5.0
 
