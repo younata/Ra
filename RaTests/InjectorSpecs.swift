@@ -202,5 +202,27 @@ class InjectorSpec: QuickSpec {
                 }
             }
         }
+
+        describe("somewhat complex cases") {
+            class BaseStruct: Injectable {
+                required init(injector: Injector) {
+
+                }
+            }
+
+            struct DependingStruct: Injectable {
+                let baseStruct: BaseStruct?
+
+                init(injector: Injector) {
+                    self.baseStruct = injector.create(BaseStruct)
+                }
+            }
+
+            it("creates somewhat complex cases without blowing up") {
+                let depending = subject.create(DependingStruct)
+                expect(depending).toNot(beNil())
+                expect(depending?.baseStruct).toNot(beNil())
+            }
+        }
     }
 }

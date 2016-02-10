@@ -23,6 +23,9 @@ public class Injector {
     public func create<T>(key: T.Type) -> T? {
         if let klass: AnyClass = key as? AnyClass {
             return create(klass) as? T
+        } else if let type = key as? Injectable.Type {
+            let obj = type.init(injector: self)
+            return obj as? T
         } else {
             let mirror = Mirror(reflecting: key)
             return create(mirror.description) as? T
