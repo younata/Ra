@@ -66,7 +66,7 @@ class InjectorSpec: QuickSpec {
             }
 
             it("should configure it") {
-                expect(subject.create("hello") is NSObject).to(beTruthy())
+                expect(subject.create("hello") is NSObject) == true
             }
         }
         
@@ -91,7 +91,7 @@ class InjectorSpec: QuickSpec {
                 describe("Creating objects conforming to Injectable") {
                     it("should use the init(injector:) initializer") {
                         let obj = subject.create(InjectableObject)
-                        expect(obj?.wasInjected).to(beTruthy())
+                        expect(obj?.wasInjected) == true
                     }
                 }
             }
@@ -118,11 +118,16 @@ class InjectorSpec: QuickSpec {
                     expect(subject.create("Hammond of Texas")).toNot(beNil())
 
                     var theStruct = aStruct()
-                    subject.bind("Hammond of Texas", to: { theStruct })
+                    var receivedInjector: Injector? = nil
+                    subject.bind("Hammond of Texas") {
+                        receivedInjector = $0
+                        return theStruct
+                    }
 
                     theStruct.someInstance = 100
 
-                    expect((subject.create("Hammond of Texas") as? aStruct)?.someInstance).to(equal(100))
+                    expect((subject.create("Hammond of Texas") as? aStruct)?.someInstance) == 100
+                    expect(receivedInjector === subject) == true
                 }
             }
         }
@@ -139,7 +144,7 @@ class InjectorSpec: QuickSpec {
                 }
                 
                 it("should write over any existing creation method") {
-                    subject.bind(AnObject.self) {
+                    subject.bind(AnObject.self) { _ in
                         return AnObject(otherObject: NSObject())
                     }
                     expect(subject.create(AnObject)?.someObject).to(beNil())
@@ -160,7 +165,7 @@ class InjectorSpec: QuickSpec {
                 it("should use this method even when the object conforms to Injectable") {
                     let obj = InjectableObject()
                     subject.bind(InjectableObject.self, toInstance: obj)
-                    expect(subject.create(InjectableObject.self)?.wasInjected).to(beFalsy())
+                    expect(subject.create(InjectableObject.self)?.wasInjected) == false
                 }
             }
 
@@ -170,7 +175,7 @@ class InjectorSpec: QuickSpec {
                 }
 
                 it("should set the creation method") {
-                    expect(subject.create(aProtocol.self) is aStruct).to(beTruthy())
+                    expect(subject.create(aProtocol.self) is aStruct) == true
                 }
             }
             
@@ -186,7 +191,7 @@ class InjectorSpec: QuickSpec {
                 
                 it("should write over any existing creation method") {
                     subject.bind("Indeed", toInstance: AnObject(otherObject: NSObject()))
-                    subject.bind("Indeed", to: { AnObject(otherObject: NSObject()) })
+                    subject.bind("Indeed") { _ in AnObject(otherObject: NSObject()) }
                     expect((subject.create("Indeed") as! AnObject).someObject).to(beNil())
                     expect((subject.create("Indeed") as! AnObject).someOtherObject).toNot(beNil())
                 }

@@ -18,7 +18,7 @@ public class Injector {
         }
     }
 
-    private var creationMethods : [String: (Void) -> (Any)] = [:]
+    private var creationMethods : [String: (Injector) -> (Any)] = [:]
 
     public func create<T>(key: T.Type) -> T? {
         if let klass: AnyClass = key as? AnyClass {
@@ -30,13 +30,13 @@ public class Injector {
     }
 
     public func create(key: String) -> Any? {
-        let obj: Any? = creationMethods[key]?()
+        let obj: Any? = creationMethods[key]?(self)
         return obj
     }
 
     private func create(klass: AnyClass) -> Any? {
-        if let closure : (Void) -> (Any) = creationMethods[klass.description()] {
-            let obj : Any = closure()
+        if let closure : (Injector) -> (Any) = creationMethods[klass.description()] {
+            let obj : Any = closure(self)
             return obj
         }
         if let inj = klass as? Injectable.Type {
@@ -52,7 +52,7 @@ public class Injector {
     
     // MARK: Adding bindings
 
-    public func bind<T>(obj: T.Type, to: () -> (T)) {
+    public func bind<T>(obj: T.Type, to: (Injector) -> (T)) {
         if let klass: AnyClass = obj as? AnyClass {
             self.bind(klass, to: to)
         } else {
@@ -61,25 +61,25 @@ public class Injector {
         }
     }
 
-    public func bind(string: String, to: () -> (Any)) {
+    public func bind(string: String, to: (Injector) -> (Any)) {
         self.creationMethods[string] = to
     }
 
-    private func bind(klass: AnyClass, to: () -> (Any)) {
+    private func bind(klass: AnyClass, to: (Injector) -> (Any)) {
         self.creationMethods[klass.description()] = to
     }
 
     public func bind<T>(obj: T.Type, toInstance: T) {
         if let klass: AnyClass = obj as? AnyClass {
-            self.bind(klass, to: {toInstance})
+            self.bind(klass, to: {_ in toInstance})
         } else {
             let mirror = Mirror(reflecting: obj)
-            self.bind(mirror.description, to: {toInstance})
+            self.bind(mirror.description, to: {_ in toInstance})
         }
     }
 
     public func bind(string: String, toInstance: Any) {
-        self.bind(string, to: {toInstance})
+        self.bind(string, to: {_ in toInstance})
     }
 
     public func removeBinding(obj: Any) {
