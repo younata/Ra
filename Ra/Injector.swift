@@ -31,33 +31,23 @@ public class Injector {
 
     public func create(key: String) -> Any? {
         let obj: Any? = creationMethods[key]?()
-        self.setInjectorIfPossible(obj)
         return obj
     }
 
     private func create(klass: AnyClass) -> Any? {
         if let closure : (Void) -> (Any) = creationMethods[klass.description()] {
             let obj : Any = closure()
-            self.setInjectorIfPossible(obj)
             return obj
         }
         if let inj = klass as? Injectable.Type {
             let obj = inj.init(injector: self)
-            self.setInjectorIfPossible(obj)
             return obj
         }
         if let aClass = klass as? NSObject.Type {
             let obj = aClass.init()
-            self.setInjectorIfPossible(obj)
             return obj
         }
         return nil
-    }
-    
-    private func setInjectorIfPossible(object: Any?) {
-        if let obj = object as? NSObject {
-            obj.injector = self
-        }
     }
     
     // MARK: Adding bindings

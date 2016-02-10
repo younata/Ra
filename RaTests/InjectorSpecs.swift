@@ -76,14 +76,6 @@ class InjectorSpec: QuickSpec {
                     it("Should create an object using the standard init()") {
                         expect(subject.create(NSObject)).to(beAKindOf(NSObject))
                     }
-                    
-                    it("Should set the injector property") {
-                        if let obj = subject.create(NSObject) {
-                            expect(obj.injector).to(beIdenticalTo(subject))
-                        } else {
-                            expect(false).to(beTruthy())
-                        }
-                    }
                 }
                 
                 describe("Creating objects using a custom initializer") {
@@ -93,14 +85,6 @@ class InjectorSpec: QuickSpec {
                     
                     it("should use the custom initializer") {
                         expect(subject.create(SomeObject)).to(beAKindOf(SomeObject))
-                    }
-                    
-                    it("Should set the injector property") {
-                        if let obj = subject.create(SomeObject) {
-                            expect(obj.injector).to(beIdenticalTo(subject))
-                        } else {
-                            expect(false).to(beTruthy())
-                        }
                     }
                 }
 
@@ -118,12 +102,13 @@ class InjectorSpec: QuickSpec {
                 }
                 
                 it("should return an instance of a class if there is an existing creation method for the string") {
-                    subject.bind("I die free", toInstance: NSDictionary())
+                    let initialObject = NSDictionary()
+                    subject.bind("I die free", toInstance: initialObject)
                     
                     if let obj = subject.create("I die free") as? NSDictionary {
-                        expect(obj.injector).to(beIdenticalTo(subject))
+                        expect(obj).to(beIdenticalTo(initialObject))
                     } else {
-                        expect(false).to(beTruthy())
+                        fail("No")
                     }
                 }
 

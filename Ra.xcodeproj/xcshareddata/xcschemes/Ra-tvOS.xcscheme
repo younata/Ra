@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "8966C1B61C2B77EE003DC04E"
-               BuildableName = "Ra-tvOS.framework"
+               BuildableName = "Ra.framework"
                BlueprintName = "Ra-tvOS"
                ReferencedContainer = "container:Ra.xcodeproj">
             </BuildableReference>
@@ -33,7 +33,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8966C1B61C2B77EE003DC04E"
-            BuildableName = "Ra-tvOS.framework"
+            BuildableName = "Ra.framework"
             BlueprintName = "Ra-tvOS"
             ReferencedContainer = "container:Ra.xcodeproj">
          </BuildableReference>
@@ -55,7 +55,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8966C1B61C2B77EE003DC04E"
-            BuildableName = "Ra-tvOS.framework"
+            BuildableName = "Ra.framework"
             BlueprintName = "Ra-tvOS"
             ReferencedContainer = "container:Ra.xcodeproj">
          </BuildableReference>
@@ -73,7 +73,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8966C1B61C2B77EE003DC04E"
-            BuildableName = "Ra-tvOS.framework"
+            BuildableName = "Ra.framework"
             BlueprintName = "Ra-tvOS"
             ReferencedContainer = "container:Ra.xcodeproj">
          </BuildableReference>

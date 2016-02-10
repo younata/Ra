@@ -15,7 +15,6 @@
 		8966C1BA1C2B77EE003DC04E /* Ra.h in Headers */ = {isa = PBXBuildFile; fileRef = 8966C1B91C2B77EE003DC04E /* Ra.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8966C1C11C2B77EE003DC04E /* Ra.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8966C1B71C2B77EE003DC04E /* Ra.framework */; };
 		8966C1CE1C2B78D0003DC04E /* Injector.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE68A1841A79AE980092D873 /* Injector.swift */; };
-		8966C1CF1C2B78D0003DC04E /* NSObject+Ra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EF4FF21A98341F0052A82F /* NSObject+Ra.swift */; };
 		8966C1D01C2B7A15003DC04E /* InjectorSpecs.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE68A1821A79AE380092D873 /* InjectorSpecs.swift */; };
 		8966C1D31C2B7A31003DC04E /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8966C1D11C2B7A31003DC04E /* Nimble.framework */; };
 		8966C1D41C2B7A31003DC04E /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8966C1D21C2B7A31003DC04E /* Quick.framework */; };
@@ -31,9 +30,6 @@
 		8974C5481AB7733C002B51EE /* Quick.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 8974C5401AB77291002B51EE /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		89CAD4CD1BA4906F006D79FC /* Ra.h in Headers */ = {isa = PBXBuildFile; fileRef = 89CAD4CC1BA4906F006D79FC /* Ra.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		89CAD4D21BA490A3006D79FC /* Injector.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE68A1841A79AE980092D873 /* Injector.swift */; };
-		89CAD4D31BA490A3006D79FC /* NSObject+Ra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EF4FF21A98341F0052A82F /* NSObject+Ra.swift */; };
-		89EF4FF31A98341F0052A82F /* NSObject+Ra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EF4FF21A98341F0052A82F /* NSObject+Ra.swift */; };
-		89EF4FF41A98341F0052A82F /* NSObject+Ra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EF4FF21A98341F0052A82F /* NSObject+Ra.swift */; };
 		AE68A1461A79AD4A0092D873 /* Ra.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE68A13A1A79AD4A0092D873 /* Ra.framework */; };
 		AE68A1831A79AE380092D873 /* InjectorSpecs.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE68A1821A79AE380092D873 /* InjectorSpecs.swift */; };
 		AE68A1851A79AE980092D873 /* Injector.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE68A1841A79AE980092D873 /* Injector.swift */; };
@@ -122,7 +118,6 @@
 		89CAD4CA1BA4906F006D79FC /* Ra.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Ra.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		89CAD4CC1BA4906F006D79FC /* Ra.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Ra.h; sourceTree = "<group>"; };
 		89CAD4CE1BA4906F006D79FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		89EF4FF21A98341F0052A82F /* NSObject+Ra.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+Ra.swift"; sourceTree = "<group>"; };
 		AE68A13A1A79AD4A0092D873 /* Ra.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Ra.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE68A13E1A79AD4A0092D873 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AE68A1451A79AD4A0092D873 /* RaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -288,7 +283,6 @@
 			isa = PBXGroup;
 			children = (
 				AE68A1841A79AE980092D873 /* Injector.swift */,
-				89EF4FF21A98341F0052A82F /* NSObject+Ra.swift */,
 				AE68A13D1A79AD4A0092D873 /* Supporting Files */,
 			);
 			path = Ra;
@@ -601,7 +595,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				89EF4FF41A98341F0052A82F /* NSObject+Ra.swift in Sources */,
 				8955AAC71A79F82000D18868 /* Injector.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -618,7 +611,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8966C1CF1C2B78D0003DC04E /* NSObject+Ra.swift in Sources */,
 				8966C1CE1C2B78D0003DC04E /* Injector.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -635,7 +627,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				89CAD4D31BA490A3006D79FC /* NSObject+Ra.swift in Sources */,
 				89CAD4D21BA490A3006D79FC /* Injector.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -644,7 +635,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				89EF4FF31A98341F0052A82F /* NSObject+Ra.swift in Sources */,
 				AE68A1851A79AE980092D873 /* Injector.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1089,6 +1079,7 @@
 				8966C1CA1C2B77EE003DC04E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8966C1CB1C2B77EE003DC04E /* Build configuration list for PBXNativeTarget "Ra-tvOSTests" */ = {
 			isa = XCConfigurationList;
@@ -1097,6 +1088,7 @@
 				8966C1CD1C2B77EE003DC04E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		89CAD4CF1BA4906F006D79FC /* Build configuration list for PBXNativeTarget "Ra-WatchOS" */ = {
 			isa = XCConfigurationList;
