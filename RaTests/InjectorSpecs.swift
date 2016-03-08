@@ -40,6 +40,14 @@ class InjectableObject : Injectable {
     init() {}
 }
 
+class InjectableNSObject : NSObject, Injectable {
+    var wasInjector : Bool = false
+    required init(injector: Injector) {
+        wasInjector = true
+        super.init()
+    }
+}
+
 protocol aProtocol {}
 
 struct aStruct : aProtocol {
@@ -129,6 +137,16 @@ class InjectorSpec: QuickSpec {
                     expect((subject.create("Hammond of Texas") as? aStruct)?.someInstance) == 100
                     expect(receivedInjector === subject) == true
                 }
+            }
+
+            it("does not cache created objects unless otherwise specified") {
+                expect(subject.create(InjectableObject)) !== subject.create(InjectableObject)
+                expect(subject.create(InjectableNSObject)) !== subject.create(InjectableNSObject)
+                expect(subject.create(NSObject)) !== subject.create(NSObject)
+
+                subject.bind(NSObject.self, toInstance: NSDictionary())
+
+                expect(subject.create(NSObject)) === subject.create(NSObject)
             }
         }
         
