@@ -20,7 +20,7 @@ public class Injector {
 
     private var creationMethods : [String: (Injector) -> (Any)] = [:]
 
-    public func create<T>(kind key: T.Type) -> T? {
+    public func create<T>(_ key: T.Type) -> T? {
         if let klass: AnyClass = key as? AnyClass {
             return create(class: klass) as? T
         } else if let type = key as? Injectable.Type {
@@ -28,13 +28,17 @@ public class Injector {
             return obj as? T
         } else {
             let mirror = Mirror(reflecting: key)
-            return create(string: mirror.description) as? T
+            return create(mirror.description) as? T
         }
     }
 
-    public func create(string key: String) -> Any? {
+    public func create(_ key: String) -> Any? {
         let obj: Any? = creationMethods[key]?(self)
         return obj
+    }
+
+    public func create<T>(_ key: String, type: T.Type) -> T? {
+        return self.create(key) as? T
     }
 
     private func create(class klass: AnyClass) -> Any? {
@@ -55,34 +59,34 @@ public class Injector {
     
     // MARK: Adding bindings
 
-    public func bind<T>(kind obj: T.Type, to: @escaping (Injector) -> (T)) {
+    public func bind<T>(_ obj: T.Type, toBlock to: @escaping (Injector) -> (T)) {
         if let klass: AnyClass = obj as? AnyClass {
-            self.bind(class: klass, to: to)
+            self.bind(class: klass, toBlock: to)
         } else {
             let mirror = Mirror(reflecting: obj)
-            self.bind(string: mirror.description, to: to)
+            self.bind(mirror.description, toBlock: to)
         }
     }
 
-    public func bind(string: String, to: @escaping (Injector) -> (Any)) {
+    public func bind(_ string: String, toBlock to: @escaping (Injector) -> (Any)) {
         self.creationMethods[string] = to
     }
 
-    private func bind(class klass: AnyClass, to: @escaping (Injector) -> (Any)) {
+    private func bind(class klass: AnyClass, toBlock to: @escaping (Injector) -> (Any)) {
         self.creationMethods[klass.description()] = to
     }
 
-    public func bind<T>(kind obj: T.Type, toInstance: T) {
+    public func bind<T>(_ obj: T.Type, to: T) {
         if let klass: AnyClass = obj as? AnyClass {
-            self.bind(class: klass, to: {_ in toInstance})
+            self.bind(class: klass, toBlock: {_ in to})
         } else {
             let mirror = Mirror(reflecting: obj)
-            self.bind(string: mirror.description, to: {_ in toInstance})
+            self.bind(mirror.description, toBlock: {_ in to})
         }
     }
 
-    public func bind(string: String, toInstance: Any) {
-        self.bind(string: string, to: {_ in toInstance})
+    public func bind(_ string: String, to: Any) {
+        self.bind(string, toBlock: {_ in to})
     }
 
     public func removeBinding(_ obj: Any) {
