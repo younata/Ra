@@ -17,6 +17,12 @@ namespace "test" do
   task :tvos do |t|
     run "set -o pipefail && xcodebuild -project Ra.xcodeproj -scheme Ra-tvOSTests -destination 'platform=tvOS Simulator,name=Apple TV 1080p' test 2>/dev/null | xcpretty -c && echo 'Tests succeeded'"
   end
+
+  desc "Run unit tests for swiftpm"
+  task :swiftpm do |t|
+    run "mv Package.swift .Package.main.swift && cp .Package.test.swift Package.swift"
+    run "swift build --clean && swift build && swift test; RETVAL=$?; mv .Package.main.swift Package.swift; exit $RETVAL"
+  end
 end
 
 task default: ["test:ios", "test:osx", "test:tvos"]

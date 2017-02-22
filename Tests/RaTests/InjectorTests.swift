@@ -1,5 +1,6 @@
-import Quick
+import Foundation
 import Nimble
+import Quick
 import Ra
 
 class SomeObject : NSObject {
@@ -54,7 +55,7 @@ struct aStruct : aProtocol {
     var someInstance : Int = 0
 }
 
-class InjectorSpec: QuickSpec {
+class InjectorTests: QuickSpec {
     override func spec() {
         var subject : Injector! = nil
 

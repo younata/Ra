@@ -11,10 +11,10 @@
 		8955AAA51A79F72100D18868 /* Ra.h in Headers */ = {isa = PBXBuildFile; fileRef = 8955AAA41A79F72100D18868 /* Ra.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8955AAAB1A79F72100D18868 /* Ra.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8955AAA01A79F72100D18868 /* Ra.framework */; };
 		8955AAC71A79F82000D18868 /* Injector.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE68A1841A79AE980092D873 /* Injector.swift */; };
-		8955AAC81A79F82400D18868 /* InjectorSpecs.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE68A1821A79AE380092D873 /* InjectorSpecs.swift */; };
+		8955AAC81A79F82400D18868 /* InjectorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE68A1821A79AE380092D873 /* InjectorTests.swift */; };
 		8966C1C11C2B77EE003DC04E /* Ra.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8966C1B71C2B77EE003DC04E /* Ra.framework */; };
 		8966C1CE1C2B78D0003DC04E /* Injector.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE68A1841A79AE980092D873 /* Injector.swift */; };
-		8966C1D01C2B7A15003DC04E /* InjectorSpecs.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE68A1821A79AE380092D873 /* InjectorSpecs.swift */; };
+		8966C1D01C2B7A15003DC04E /* InjectorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE68A1821A79AE380092D873 /* InjectorTests.swift */; };
 		8966C1D31C2B7A31003DC04E /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8966C1D11C2B7A31003DC04E /* Nimble.framework */; };
 		8966C1D41C2B7A31003DC04E /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8966C1D21C2B7A31003DC04E /* Quick.framework */; };
 		8966C1D61C2B7A4F003DC04E /* Nimble.framework in Embed frameworks */ = {isa = PBXBuildFile; fileRef = 8966C1D11C2B7A31003DC04E /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -31,7 +31,7 @@
 		8994F0ED1C8F577D00920E6D /* Ra.h in Headers */ = {isa = PBXBuildFile; fileRef = 8955AAA41A79F72100D18868 /* Ra.h */; };
 		89CAD4D21BA490A3006D79FC /* Injector.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE68A1841A79AE980092D873 /* Injector.swift */; };
 		AE68A1461A79AD4A0092D873 /* Ra.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE68A13A1A79AD4A0092D873 /* Ra.framework */; };
-		AE68A1831A79AE380092D873 /* InjectorSpecs.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE68A1821A79AE380092D873 /* InjectorSpecs.swift */; };
+		AE68A1831A79AE380092D873 /* InjectorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE68A1821A79AE380092D873 /* InjectorTests.swift */; };
 		AE68A1851A79AE980092D873 /* Injector.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE68A1841A79AE980092D873 /* Injector.swift */; };
 /* End PBXBuildFile section */
 
@@ -115,7 +115,7 @@
 		AE68A13E1A79AD4A0092D873 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AE68A1451A79AD4A0092D873 /* RaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE68A14B1A79AD4A0092D873 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AE68A1821A79AE380092D873 /* InjectorSpecs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InjectorSpecs.swift; sourceTree = "<group>"; };
+		AE68A1821A79AE380092D873 /* InjectorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InjectorTests.swift; path = RaTests/InjectorTests.swift; sourceTree = "<group>"; };
 		AE68A1841A79AE980092D873 /* Injector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Injector.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -222,8 +222,8 @@
 			isa = PBXGroup;
 			children = (
 				8994F0EE1C8F579A00920E6D /* Frameworks */,
-				AE68A13C1A79AD4A0092D873 /* Ra */,
-				AE68A1491A79AD4A0092D873 /* RaTests */,
+				AE68A13C1A79AD4A0092D873 /* Sources */,
+				AE68A1491A79AD4A0092D873 /* Tests */,
 				AE68A13B1A79AD4A0092D873 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -242,23 +242,23 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		AE68A13C1A79AD4A0092D873 /* Ra */ = {
+		AE68A13C1A79AD4A0092D873 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
 				8955AAA41A79F72100D18868 /* Ra.h */,
 				AE68A1841A79AE980092D873 /* Injector.swift */,
 				AE68A13E1A79AD4A0092D873 /* Info.plist */,
 			);
-			path = Ra;
+			path = Sources;
 			sourceTree = "<group>";
 		};
-		AE68A1491A79AD4A0092D873 /* RaTests */ = {
+		AE68A1491A79AD4A0092D873 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				AE68A1821A79AE380092D873 /* InjectorSpecs.swift */,
+				AE68A1821A79AE380092D873 /* InjectorTests.swift */,
 				AE68A14B1A79AD4A0092D873 /* Info.plist */,
 			);
-			path = RaTests;
+			path = Tests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -440,11 +440,11 @@
 				TargetAttributes = {
 					8955AA9F1A79F72100D18868 = {
 						CreatedOnToolsVersion = 6.1.1;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 0820;
 					};
 					8955AAA91A79F72100D18868 = {
 						CreatedOnToolsVersion = 6.1.1;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 0820;
 					};
 					8966C1B61C2B77EE003DC04E = {
 						CreatedOnToolsVersion = 7.2;
@@ -553,7 +553,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8955AAC81A79F82400D18868 /* InjectorSpecs.swift in Sources */,
+				8955AAC81A79F82400D18868 /* InjectorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -569,7 +569,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8966C1D01C2B7A15003DC04E /* InjectorSpecs.swift in Sources */,
+				8966C1D01C2B7A15003DC04E /* InjectorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -593,7 +593,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AE68A1831A79AE380092D873 /* InjectorSpecs.swift in Sources */,
+				AE68A1831A79AE380092D873 /* InjectorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -630,7 +630,7 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = Ra/Info.plist;
+				INFOPLIST_FILE = Sources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -652,7 +652,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Ra/Info.plist;
+				INFOPLIST_FILE = Sources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -681,7 +681,7 @@
 					"$(inherited)",
 				);
 				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
-				INFOPLIST_FILE = RaTests/Info.plist;
+				INFOPLIST_FILE = Tests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.rachelbrindle.$(PRODUCT_NAME:rfc1034identifier)";
@@ -703,7 +703,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
-				INFOPLIST_FILE = RaTests/Info.plist;
+				INFOPLIST_FILE = Tests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.rachelbrindle.$(PRODUCT_NAME:rfc1034identifier)";
@@ -723,7 +723,7 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = Ra/Info.plist;
+				INFOPLIST_FILE = Sources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rachelbrindle.Ra;
@@ -743,7 +743,7 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = Ra/Info.plist;
+				INFOPLIST_FILE = Sources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rachelbrindle.Ra;
@@ -765,7 +765,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/tvOS",
 				);
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = RaTests/Info.plist;
+				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.rachelbrindle.Ra-tvOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -782,7 +782,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/tvOS",
 				);
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = RaTests/Info.plist;
+				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.rachelbrindle.Ra-tvOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -801,7 +801,7 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = Ra/Info.plist;
+				INFOPLIST_FILE = Sources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rachelbrindle.Ra;
@@ -821,7 +821,7 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = Ra/Info.plist;
+				INFOPLIST_FILE = Sources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rachelbrindle.Ra;
@@ -933,7 +933,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_VERSION = A;
-				INFOPLIST_FILE = Ra/Info.plist;
+				INFOPLIST_FILE = Sources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
@@ -956,7 +956,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_VERSION = A;
-				INFOPLIST_FILE = Ra/Info.plist;
+				INFOPLIST_FILE = Sources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
@@ -983,7 +983,7 @@
 					"$(inherited)",
 				);
 				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
-				INFOPLIST_FILE = RaTests/Info.plist;
+				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.rachelbrindle.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1003,7 +1003,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/Mac",
 				);
 				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
-				INFOPLIST_FILE = RaTests/Info.plist;
+				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.rachelbrindle.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
