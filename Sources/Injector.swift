@@ -42,7 +42,8 @@ public class Injector {
     }
 
     private func create(class klass: AnyClass) -> Any? {
-        if let closure : (Injector) -> (Any) = creationMethods[klass.description()] {
+        let description = Mirror(reflecting: klass).description
+        if let closure : (Injector) -> (Any) = creationMethods[description] {
             let obj : Any = closure(self)
             return obj
         }
@@ -50,10 +51,12 @@ public class Injector {
             let obj = inj.init(injector: self)
             return obj
         }
+#if _runtime(_ObjC)
         if let aClass = klass as? NSObject.Type {
             let obj = aClass.init()
             return obj
         }
+#endif
         return nil
     }
     
@@ -73,7 +76,8 @@ public class Injector {
     }
 
     private func bind(class klass: AnyClass, toBlock to: @escaping (Injector) -> (Any)) {
-        self.creationMethods[klass.description()] = to
+        let description = Mirror(reflecting: klass).description
+        self.creationMethods[description] = to
     }
 
     public func bind<T>(_ obj: T.Type, to: T) {
@@ -101,7 +105,7 @@ public class Injector {
     }
     
     private func removeBinding(class klass: AnyClass) {
-        self.creationMethods.removeValue(forKey: klass.description())
+        self.creationMethods.removeValue(forKey: Mirror(reflecting: klass).description)
     }
     
     private func removeBinding(string: String) {
